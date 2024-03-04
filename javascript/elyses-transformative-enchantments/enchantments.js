@@ -8,7 +8,7 @@
  * @returns {number[]} deck with every card doubled
  */
 export function seeingDouble(deck) {
-  throw new Error('Implement the seeingDouble function');
+  return deck.map((value) => value *2)
 }
 
 /**
@@ -19,7 +19,13 @@ export function seeingDouble(deck) {
  * @returns {number[]} deck with triplicate 3s
  */
 export function threeOfEachThree(deck) {
-  throw new Error('Implement the threeOfEachThree function');
+  for(let i = 0; i < deck.length; i++) {
+    if (deck[i] === 3) {
+      deck.splice(i, 0, 3, 3)
+    }
+  }
+
+  return deck;
 }
 
 /**
