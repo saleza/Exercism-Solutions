@@ -37,7 +37,7 @@ export function threeOfEachThree(deck) {
  * @returns {number[]} deck with only two middle cards
  */
 export function middleTwo(deck) {
-  return deck.slice()
+  return deck.slice(4,6)
 }
 
 /**
@@ -49,7 +49,8 @@ export function middleTwo(deck) {
  */
 
 export function sandwichTrick(deck) {
-  throw new Error('Implement the sandwichTrick function');
+  deck.splice((deck.length / 2), 0, deck[deck.length - 1], deck[0])
+  return deck.slice(1, -1)
 }
 
 /**
@@ -60,7 +61,7 @@ export function sandwichTrick(deck) {
  * @returns {number[]} deck with only 2s
  */
 export function twoIsSpecial(deck) {
-  throw new Error('Implement the twoIsSpecial function');
+  return deck.filter(value => value === 2)
 }
 
 /**
@@ -71,7 +72,7 @@ export function twoIsSpecial(deck) {
  * @returns {number[]} ordered deck
  */
 export function perfectlyOrdered(deck) {
-  throw new Error('Implement the perfectlyOrdered function');
+  return deck.sort((a,b) => a-b) 
 }
 
 /**
@@ -82,5 +83,5 @@ export function perfectlyOrdered(deck) {
  * @returns {number[]} reordered deck
  */
 export function reorder(deck) {
-  throw new Error('Implement the reorder function');
+  return deck.reverse()
 }
